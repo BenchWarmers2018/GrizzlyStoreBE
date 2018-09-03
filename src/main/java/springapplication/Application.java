@@ -15,6 +15,8 @@ public class Application {
         System.out.println("Avtar checked in");
         System.out.println("Anto was here :D");
         System.out.println("Julia really really likes dogs");
+        System.out.println("Ian :)");
+
     }
 
 }
