@@ -7,5 +7,15 @@ pipeline {
             sh 'mvn package'
          }
       }
+      stage('Test') {
+         steps {
+            echo 'Testing in process'
+         }
+      }
+      stage('Deploy') {
+         steps {
+            echo 'Deployment in process'
+         }   
+      }
    }
 }
