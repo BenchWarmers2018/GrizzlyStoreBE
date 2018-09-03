@@ -2,9 +2,11 @@ pipeline {
    agent any
    stages {
       stage('Build') {
-         steps { 
+         steps {
             echo 'BUILDING PROJECT'
-            sh 'mvn package'
+            withMaven(maven: 'mvn') { 
+               sh 'mvn package'
+            }
          }
       }
       stage('Test') {
