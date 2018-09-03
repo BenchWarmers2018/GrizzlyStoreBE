@@ -16,7 +16,7 @@ public class Application {
         System.out.println("Anto was here :D");
         System.out.println("Julia really really likes dogs");
         System.out.println("Ian :)");
-        System.out.println("Paarth just landed :-D");
+        System.out.println("Paarth's here");
     }
 
 }
