@@ -3,7 +3,7 @@ pipeline {
    stages {
       stage('Build') {
          steps {
-            echo 'BUILDING PROJECT'
+            echo 'BUILDING PROJECT!!'
             withMaven(maven: 'mvn') { 
                sh 'mvn package'
                sh 'mvn exec:java'
