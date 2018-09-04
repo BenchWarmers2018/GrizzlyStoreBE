@@ -6,6 +6,7 @@ pipeline {
             echo 'BUILDING PROJECT'
             withMaven(maven: 'mvn') { 
                sh 'mvn package'
+               sh 'mvn exec:java'
             }
          }
       }
