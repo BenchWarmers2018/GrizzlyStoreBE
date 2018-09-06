@@ -23,7 +23,7 @@ pipeline {
       stage('Deploy') {
          steps {
             	echo 'Deployment in process'
-		sh './scripts/deploy.sh' 
+		sh 'mvn spring-boot:run'
          }
       }
    }
