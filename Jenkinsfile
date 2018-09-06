@@ -22,7 +22,8 @@ pipeline {
       }
       stage('Deploy') {
          steps {
-            echo 'Deployment in process'
+            	echo 'Deployment in process'
+		sh './jenkins/scripts/deploy.sh' 
          }
       }
    }
