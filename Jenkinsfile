@@ -4,21 +4,26 @@ pipeline {
       stage('Build') {
          steps {
             echo 'BUILDING PROJECT!!'
-            withMaven(maven: 'mvn') { 
-               sh 'mvn package'
-               sh 'mvn exec:java'
+            withMaven(maven: 'mvn') {
+            	sh 'mvn -B -DskipTests clean package'
             }
          }
       }
       stage('Test') {
-         steps {
-            echo 'Testing in process'
-         }
+            steps {
+		echo 'Testing in progress'
+                sh 'mvn test' 
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml' 
+                }
+            }
       }
       stage('Deploy') {
          steps {
             echo 'Deployment in process'
-         }   
+         }
       }
    }
 }
