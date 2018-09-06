@@ -10,21 +10,22 @@ pipeline {
          }
       }
       stage('Test') {
-            steps {
-		echo 'Testing in progress'
-                sh 'mvn test' 
+        steps {
+		    echo 'Testing in progress'
+		    sh 'mvn test'
+		}
+        post {
+            always {
+                junit 'target/surefire-reports/*.xml'
             }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml' 
-                }
-            }
+        }
       }
       stage('Deploy') {
          steps {
-            	echo 'Deployment in process'
-		sh "pwd && cd target && ls && pwd"
-		sh 'mvn spring-boot:run'
+            echo 'Deployment in process'
+		    sh "pwd && cd target && ls && pwd"
+		    sh "JENKINS_NODE_COOKIE=dontKillMe java -jar grizzly-store-spring-1.0-SNAPSHOT.jar >& log &"
+		    /* sh 'mvn spring-boot:run' */
          }
       }
    }
