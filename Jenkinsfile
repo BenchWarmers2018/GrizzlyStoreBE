@@ -23,6 +23,7 @@ pipeline {
       stage('Deploy') {
          steps {
             	echo 'Deployment in process'
+		sh "pwd && cd target && ls && pwd"
 		sh 'mvn spring-boot:run'
          }
       }
