@@ -24,7 +24,7 @@ pipeline {
          steps {
             echo 'Deployment in process'
 		    sh "pwd && cd target && ls && cd .. && ls"
-		    sh "JENKINS_NODE_COOKIE=dontKillMe mvn spring-boot:run >& log &"
+		    sh "JENKINS_NODE_COOKIE=dontKillMe mvn spring-boot:run &"
 		    /* sh 'mvn spring-boot:run'  java -jar grizzly-store-spring-1.0-SNAPSHOT.jar*/
          }
       }
