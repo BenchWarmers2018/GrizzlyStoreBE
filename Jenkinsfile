@@ -26,7 +26,7 @@ pipeline {
              sh "pwd && cd target"
              sh "sudo ln -s grizzly-store-spring-1.0-SNAPSHOT.jar /etc/init.d/grizzly"
              sh "service grizzly start"
-		    /* abc sh 'mvn spring-boot:run'  java -jar grizzly-store-spring-1.0-SNAPSHOT.jar*/
+		    /* sh 'mvn spring-boot:run'  java -jar grizzly-store-spring-1.0-SNAPSHOT.jar*/
          }
       }
    }
