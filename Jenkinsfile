@@ -22,12 +22,7 @@ pipeline {
       }
       stage('Deploy') {
          steps {
-             echo 'Deployment in process'
-             sh "pwd && cd target"
-             sh 'sudo systemctl stop grizzly.service'
-             sh 'sudo rm /etc/init.d/grizzly || true'
-             sh "sudo ln -s grizzly-store-spring-1.0-SNAPSHOT.jar /etc/init.d/grizzly"
-             sh "sudo systemctl start grizzly.service"
+               sh 'deploy.sh'
 		    /* sh 'mvn spring-boot:run'  java -jar grizzly-store-spring-1.0-SNAPSHOT.jar*/
          }
       }
